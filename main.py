@@ -10,8 +10,6 @@ def text_to_mp4(text: str, vid_name: str, dur: int):
     :param vid_name: имя результирующего видео mp4
     :param dur: время длительности клипа в секундах
     """
-    # img = Image.open(path_img)
-    #  = "12345"
 
     f_size = 100
     font = ImageFont.truetype("arial.ttf", f_size)
@@ -20,15 +18,10 @@ def text_to_mp4(text: str, vid_name: str, dur: int):
     img = Image.new(mode="RGBA", size=(100, 100))
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out_scr = cv2.VideoWriter(f"{vid_name}.mp4", fourcc, f_rate, (img.width, img.height))
-
-    # frame2 = np.hstack([frame, frame])
-    # plt.imshow(frame2)
-    # plt.show()
-    i = 0
-
+    
     h_size = dur * int(f_rate)
     h = font.getlength(text) / h_size
-    i=0
+    i = 0
     for im in range(0, h_size):
         img = Image.new(mode="RGBA", size=(100, 100))
         draw = ImageDraw.Draw(img)
