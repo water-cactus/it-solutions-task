@@ -1,12 +1,17 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+# from convert_mp4 import text_to_mp4
+# import convert_mp4
+
 import cv2
 import numpy as np
 from PIL import Image
 from PIL import ImageFont, ImageDraw
-# import matplotlib.pyplot as plt
 
-def text_to_mp4(text: str, vid_name: str, dur: int):
+
+def text_to_mp4(text: str, vid_name: str = 'out_put', dur: int = 3):
     """
-    :param path_img: путь к изображению
+    :param text: строка
     :param vid_name: имя результирующего видео mp4
     :param dur: время длительности клипа в секундах
     """
@@ -32,5 +37,9 @@ def text_to_mp4(text: str, vid_name: str, dur: int):
         out_scr.write(frame_buf)
 
 
-if __name__ == '__main__':
-    text_to_mp4(text='0123456789', vid_name='out_put', dur=3)
+
+def index(request):
+    lstring = request.GET.get("lstring")
+    print(lstring)
+    text_to_mp4(text=lstring)
+    return HttpResponse("Главная")
