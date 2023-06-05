@@ -26,3 +26,6 @@ Option 4 - Headless full package (contains both main modules and contrib/extra m
 
 # Pillow
 ```pip install --upgrade Pillow```
+
+# Running
+```python main.py```
