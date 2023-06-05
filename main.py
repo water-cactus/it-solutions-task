@@ -4,7 +4,7 @@ from PIL import Image
 from PIL import ImageFont, ImageDraw
 # import matplotlib.pyplot as plt
 
-def img_to_mp4(text: str, vid_name: str, dur: int):
+def text_to_mp4(text: str, vid_name: str, dur: int):
     """
     :param path_img: путь к изображению
     :param vid_name: имя результирующего видео mp4
@@ -40,5 +40,5 @@ def img_to_mp4(text: str, vid_name: str, dur: int):
 
 
 if __name__ == '__main__':
-    img_to_mp4(text='Hello ...........', vid_name='out_put', dur=3)
+    text_to_mp4(text='Hello ...........', vid_name='out_put', dur=3)
 
