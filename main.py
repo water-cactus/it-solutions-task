@@ -18,7 +18,7 @@ def text_to_mp4(text: str, vid_name: str, dur: int):
     img = Image.new(mode="RGBA", size=(100, 100))
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     out_scr = cv2.VideoWriter(f"{vid_name}.mp4", fourcc, f_rate, (img.width, img.height))
-    
+
     h_size = dur * int(f_rate)
     h = font.getlength(text) / h_size
     i = 0
