@@ -4,7 +4,14 @@ import cv2
 import numpy as np
 from PIL import Image
 from PIL import ImageFont, ImageDraw
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse
+# from it_solitions.app_convert import models
+from .models import Input_users
+
+
+def save_to_SQLite(text: str):
+    a = Input_users(text=text)
+    a.save()
 
 
 def download_file():
@@ -54,4 +61,5 @@ def index(request):
     print(text)
     out_put = 'out_put'
     text_to_mp4(text=text, vid_name=out_put)
+    save_to_SQLite(text)
     return download_file()

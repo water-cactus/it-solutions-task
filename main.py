@@ -10,7 +10,6 @@ def text_to_mp4(text: str, vid_name: str, dur: int):
     :param vid_name: имя результирующего видео mp4
     :param dur: время длительности клипа в секундах
     """
-
     f_size = 100
     font = ImageFont.truetype("arial.ttf", f_size)
 
